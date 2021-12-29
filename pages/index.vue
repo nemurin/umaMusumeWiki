@@ -1,8 +1,6 @@
 <template>
 <div>
-  <ul>
-    <li class="selection"><router-link to="/other">other</router-link></li>
-  </ul>
+  <Header />
 <h4>積み上げた本当のこと</h4>
 <table>
   <tbody>

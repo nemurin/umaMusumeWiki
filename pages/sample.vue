@@ -1,23 +1,15 @@
 <template>
-<div>
-  <Header />
-<div v-for="item in items"
-       :key="item.Title1">
-   <h4>{{item.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{item.Choices1}}</th>
-      <td>{{item.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{item.Choices2}}</th>
-      <td>{{item.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>       
-</div>
+ <div class="page">
+   <Header />
+   <ul>
+     <li
+       v-for="item in items"
+       :key="item.message"
+     >
+       {{ item.message }}
+     </li>
+   </ul>
+ </div>
 </template>
 <style>
 body {
@@ -77,22 +69,13 @@ table {
 </style>
 <script>
 export default {
-  name: 'IndexPage',
-  data: function(){
-    return {
-      items: [
-       { Title1: '積み上げた本当のこと',
-      Choices1: '君の力を見せてあげよう!',
-      Content1: 'パワー＋10,スキルPt＋15',
-      Choices2: '雨なんて吹き飛ばしてあげよう!',
-      Content2: '「道悪○」のヒント＋1,スキルPt＋15' },
-       { Title1: '積み上げた本当のこと',
-      Choices1: '君の力を見せてあげよう!',
-      Content1: 'パワー＋10,スキルPt＋15',
-      Choices2: '雨なんて吹き飛ばしてあげよう!',
-      Content2: '「道悪○」のヒント＋1,スキルPt＋15' },
+ data () {
+   return {
+     items: [
+       { message: 'Foo' },
+       { message: 'Bar' },
      ]
-  }
-  }
+   }
+ },
 }
 </script>
