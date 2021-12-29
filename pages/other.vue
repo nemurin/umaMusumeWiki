@@ -1,7 +1,7 @@
 <template>
 <div>
   <ul>
-    <li class="selection"><router-link to="/other">other</router-link></li>
+    <li class="selection"><router-link to="/">index</router-link></li>
   </ul>
 <h4>積み上げた本当のこと</h4>
 <table>
