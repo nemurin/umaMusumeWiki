@@ -16,7 +16,15 @@
     </tr>
   </tbody>
 </table>
-</div>       
+</div>
+<!-- 緑スキルチェック表 -->
+<ul>左回り：
+  <li v-for="(card, index) in filteredCards('左回り')" :key="index">
+    <img v-bind:src="card.img">
+    </li>
+    </ul> 
+<!-- 有効スキルチェック表 -->
+      
 </div>
 </template>
 <style>
@@ -34,7 +42,7 @@ li {
 }
 
 h4 {  
-    padding: 5px 0 5px 30px;
+    padding: 25px 0 5px 40px;
     background-size: 25px 25px;
     color: inherit;
     background-repeat: no-repeat;
@@ -67,6 +75,21 @@ td {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    margin-left: 40px;
+}
+img {
+    width: 50px;
+    height: auto;
+    vertical-align: inherit;
+    list-style: none;
+    top: 50%;
+    content: '';
+    border-left: 1px solid #f2f2f2;
+    position: relative;
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
 }
 .select1{
     background-color: #dcedc8!important;;
@@ -81,13 +104,65 @@ export default {
   data: function(){
     return {
       items: [
-       { Title1: '高松宮記念',
+       { Title1: 'カプリコーン杯：高松宮記念',
       Choices1: '条件',
       Content1: '冬/中京/芝重/1200m(短距離)/左雪',
       Choices2: '考えたこと',
       Content2: 'エル→バクシン、オグリ→エアグル' },
+     ],
+     cards: [
+       {
+          id: 2,
+          name: 'サイレンススズカSSR:スピード',
+          greenSkill: '左回り',
+          img: 'sp_2.png'
+        },
+        {
+          id: 140,
+          name: 'メジロアルダンSR:賢さ',
+          greenSkill: '左回り',
+          img: 'sp_140.png'
+        },
+        {
+          id: 151,
+          name: 'サイレンススズカSSR:スタミナ',
+          greenSkill: '左回り',
+          img: 'sp_151.png'
+        },
+        {
+          id: 158,
+          name: 'ゼンノロブロイSSR:スピード',
+          greenSkill: '左回り',
+          img: 'sp_158.png'
+        },
+        {
+          id: 176,
+          name: 'サイレンススズカSSR(ストーリー):スピード',
+          greenSkill: '左回り',
+          img: 'sp_176.png'
+        },
+        {
+          id: 31,
+          name: 'ユキノビジンSR:根性',
+          greenSkill: '冬ウマ娘',
+          img: 'sp_31.png'
+        },
      ]
   }
-  }
+  },
+  computed: {
+    filteredCards () {
+      return function(filteredSkill) {
+      let cards = []
+      for(let i = 0; i < this.cards.length; i++) {
+        let card = this.cards[i];
+        if(card.greenSkill.indexOf(filteredSkill)!= -1){
+          cards.push(card);
+        }
+      }
+      return cards;
+      }
+    }
+  },
 }
 </script>

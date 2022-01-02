@@ -12,9 +12,8 @@
 	};
 </script>
 <style>
-li {
+li.selection {
     list-style: none;
-    position: absolute;
     top: 50%;
     margin-top: -10px;
     content: '';
