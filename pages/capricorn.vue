@@ -24,12 +24,8 @@
    <table>
   <tbody>
     <tr v-for="(skill, index) in ActiveSkills('左回り')" :key="index">
-      <th class="select1">{{skill.card}}</th>
-      <td>{{skill.name}}</td>
-    </tr>
-    <tr v-for="(skill, index) in ActiveSkills('左回り')" :key="index">
-      <th class="select1">{{skill.card}}</th>
-      <td>{{skill.name}}</td>
+      <th class="select1">{{skill.name}}</th>
+      <td>{{skill.greenSkill}}</td>
     </tr>
   </tbody>
 </table>
@@ -92,15 +88,29 @@ export default {
           greenSkill: '冬ウマ娘',
           img: 'sp_31.png'
         },
+        {
+          id: 31,
+          name: 'ミホノブルボンSSR:賢さ',
+          greenSkill: '雪の日',
+          img: 'sp_31.png'
+        },
      ],
-     skills: [
+     Ids: [
        {
           id: 2,
-          name: '左回り',
-          card: 'サイレンススズカ',
-          type: '左回り'
         },
-     ]
+        {
+          id: 31,
+        },
+     ],
+     Types: [
+       {
+          type: '左回り',
+        },
+        {
+          type: '雪の日',
+        },
+     ],
   }
   },
   computed: {
@@ -119,11 +129,17 @@ export default {
     ActiveSkills () {
       return function(Character) {
       let skills = []
-      for(let i = 0; i < this.skills.length; i++) {
-        let skill = this.skills[i];
-        if(skill.type.indexOf(Character)!= -1){
+      for(let k = 0; k < this.Ids.length; k++) {
+      for(let j = 0; j < this.Types.length; j++) {
+      for(let i = 0; i < this.cards.length; i++) {
+        let skill = this.cards[i];
+        let type = this.Types[j];
+        let id = this.Ids[k];
+        if(skill.greenSkill.indexOf(type.type)!= -1 && skill.id==id.id){
           skills.push(skill);
         }
+      }
+      }
       }
       return skills;
       }
