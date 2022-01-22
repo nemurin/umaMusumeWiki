@@ -5,6 +5,7 @@
     <li class="selection"><router-link to="/sample">sample</router-link></li>
     <li class="selection"><router-link to="/capricorn">カプリコーン杯</router-link></li>
     <li class="selection"><router-link to="/erucondorupasar">エルコンドルパサー</router-link></li>
+    <li class="selection"><router-link to="/ogriCap">オグリ</router-link></li>
   </ul>
 </template>
 <script>
