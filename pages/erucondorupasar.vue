@@ -17,22 +17,7 @@
   </tbody>
 </table>
 </div> 
-<div v-for="skill in skills"
-       :key="skill.Title1" class="condition">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
+<SupportCard />
 </div>
 </template>
 
@@ -67,23 +52,6 @@ export default {
       Content1: 'スタミナ+10',
       Choices2: 'パワフルな響きだ',
       Content2: 'パワー+10' },
-     ],
-     skills: [
-       { Title1: '他人に危害を及ぼしてはならない',
-      Choices1: 'すごく重そうだ',
-      Content1: '体力-10、スタミナ+5、パワー+15',
-      Choices2: '夜だと、音が少し響くかもな',
-      Content2: '体力+10,賢さ+5' },
-      { Title1: 'ステータス『つまらない？』',
-      Choices1: '今のままでいいと思う',
-      Content1: 'スピード+10,『勢い任せ』のヒントLv+1',
-      Choices2: '表情を変えずに済む仮装は',
-      Content2: '賢さ+15' },
-      { Title1: '命令は守らなければならない',
-      Choices1: '開店直前から待機しておこう',
-      Content1: '『集中力』のヒントLv+1',
-      Choices2: '昼休みになったらダッシュ',
-      Content2: 'スピード+10スキルPt+15' },
      ],
   }
   },
