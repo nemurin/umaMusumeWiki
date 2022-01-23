@@ -1,7 +1,13 @@
 <template>
 <div>
+  <div class="imaging">
+  <img src="sp_159.png" v-on:click="toggle_switch()">
+  <img src="sp_159.png">
+  </p>
+  </div> 
 	<div v-for="skill in skills"
-       :key="skill.Title1" class="condition">
+       :key="skill.Title1" class="condition"
+       v-if="isActive === true">
    <h4>{{skill.Title1}}</h4>
    <table>
   <tbody>
@@ -39,11 +45,26 @@
       Choices2: '昼休みになったらダッシュ',
       Content2: 'スピード+10スキルPt+15' },
      ],
+     isActive: true,
   }
   },
+   methods: {
+   toggle_switch: function() {
+    this.isActive = !this.isActive
+   }
+  }
 	};
 </script>
 <style>
+img {
+  width: 50px;
+    height: auto;
+    vertical-align: inherit;
+    border-left: 1px solid #f2f2f2;
+    float: left;
+    text-align: center;
+    cursor: pointer;  
+}
 h4 {  
     padding: 0px 0 0px 40px;
     background-size: 25px 25px;
@@ -88,5 +109,9 @@ table {
 }
 .condition{
     padding: 10px 0px 0px 00px;
+}
+.imaging{
+    height: 50px;
+    padding: 10px 0px 0px 0px;
 }
 </style>
