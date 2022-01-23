@@ -22,18 +22,6 @@
 	export default {
 		data: function(){
     return {
-      items: [
-       { Title1: '畑でビルドアップ',
-      Choices1: '雑草を抜いてしまおう',
-      Content1: '根性+10',
-      Choices2: '畑を耕そう',
-      Content2: 'パワー+10' },
-      { Title1: 'レースとグルメで満腹に',
-      Choices1: '早めに行って観戦場所を確保しよう',
-      Content1: '体力+10,スキルPt+15',
-      Choices2: '人の隙間を見逃すな',
-      Content2: '『軽やかステップ』のヒントLv+1' },
-     ],
      skills: [
        { Title1: '賢さブルボン 他人に危害を及ぼしてはならない',
       Choices1: 'すごく重そうだ',
@@ -56,21 +44,6 @@
 	};
 </script>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    color: #444;
-    font-size: 14px;
-    font-family: Hiragino Kaku Gothic Pro,"ヒラギノ角ゴ Pro W3",Meiryo,"メイリオ",Osaka,MS PGothic,arial,helvetica,sans-serif;
-    line-height: 1.6;
-    background: #FFF;
-}
-li {
-    list-style: none;
-}
-ul {
-    margin-block-end: 15px;
-}
 h4 {  
     padding: 0px 0 0px 40px;
     background-size: 25px 25px;
