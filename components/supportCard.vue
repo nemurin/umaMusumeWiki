@@ -1,30 +1,26 @@
 <template>
 <div>
-  <Header />
-<div v-for="item in items"
-       :key="item.Title1" class="condition">
-   <h4>{{item.Title1}}</h4>
+	<div v-for="skill in skills"
+       :key="skill.Title1" class="condition">
+   <h4>{{skill.Title1}}</h4>
    <table>
   <tbody>
     <tr>
-      <th class="select1">{{item.Choices1}}</th>
-      <td>{{item.Content1}}</td>
+      <th class="select1">{{skill.Choices1}}</th>
+      <td>{{skill.Content1}}</td>
     </tr>
     <tr>
-      <th class="select2">{{item.Choices2}}</th>
-      <td>{{item.Content2}}</td>
+      <th class="select2">{{skill.Choices2}}</th>
+      <td>{{skill.Content2}}</td>
     </tr>
   </tbody>
 </table>
 </div> 
-<SupportCard />
 </div>
 </template>
-
 <script>
-export default {
-  name: 'IndexPage',
-  data: function(){
+	export default {
+		data: function(){
     return {
       items: [
        { Title1: '畑でビルドアップ',
@@ -57,7 +53,7 @@ export default {
      ],
   }
   },
-}
+	};
 </script>
 <style>
 body {
