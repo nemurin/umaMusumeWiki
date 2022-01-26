@@ -1,11 +1,13 @@
 <template>
 <div>
   <div class="imaging">
-  <img src="sp_159.png" v-on:click="toggle_switch()">
-  <img src="sp_159.png">
+  <img src="sp_159.png" v-on:click="toggle_switch()" v-if="isActive === true">
+  <img src="sp_159.png" class="graymode" v-on:click="toggle_switch()" v-if="isActive === false">
+  <img src="sp_129.png" v-on:click="toggle_switch2()" v-if="isActive2 === true">
+  <img src="sp_129.png" class="graymode" v-on:click="toggle_switch2()" v-if="isActive2 === false">
   </p>
-  </div> 
-	<div v-for="skill in skills"
+  </div>
+	<div v-for="skill in skills159"
        :key="skill.Title1" class="condition"
        v-if="isActive === true">
    <h4>{{skill.Title1}}</h4>
@@ -22,13 +24,32 @@
   </tbody>
 </table>
 </div> 
+
+<div v-for="skill in skills129"
+       :key="skill.Title1" class="condition"
+       v-if="isActive2 === true">
+   <h4>{{skill.Title1}}</h4>
+   <table>
+  <tbody>
+    <tr>
+      <th class="select1">{{skill.Choices1}}</th>
+      <td>{{skill.Content1}}</td>
+    </tr>
+    <tr>
+      <th class="select2">{{skill.Choices2}}</th>
+      <td>{{skill.Content2}}</td>
+    </tr>
+  </tbody>
+</table>
+</div> 
+
 </div>
 </template>
 <script>
 	export default {
 		data: function(){
     return {
-     skills: [
+     skills159: [
        { Title1: '賢さブルボン 他人に危害を及ぼしてはならない',
       Choices1: 'すごく重そうだ',
       Content1: '体力-10、スタミナ+5、パワー+15',
@@ -45,12 +66,55 @@
       Choices2: '昼休みになったらダッシュ',
       Content2: 'スピード+10スキルPt+15' },
      ],
+     skills129: [
+       { Title1: '賢さドーベル やってみてもいい',
+      Choices1: '体を鍛えて自信をつけよう!',
+      Content1: '体力+15',
+      Choices2: '鏡の前で笑顔の練習!',
+      Content2: 'やる気アップ,スキルPt+15' },
+      { Title1: '賢さドーベル 喜んでくれるかな……',
+      Choices1: '別のプレゼントを探してみたら?',
+      Content1: 'スキルPt+45',
+      Choices2: '覚悟を決めて、突っ込もう!',
+      Content2: '『負けん気』のヒントLv+1' },
+      { Title1: '賢さドーベル 踏み出す、一歩',
+      Choices1: 'チラシ、ください!!',
+      Content1: '体力-10,スキルPt+15~45',
+      Choices2: '一緒に配るぞ!',
+      Content2: '根性+5,賢さ+5' },
+     ],
+     skills: [
+       {
+          skills159: [
+          { Title1: '賢さブルボン 他人に危害を及ぼしてはならない',
+          Choices1: 'すごく重そうだ',
+          Content1: '体力-10、スタミナ+5、パワー+15',
+          Choices2: '夜だと、音が少し響くかもな',
+          Content2: '体力+10,賢さ+5' },
+          { Title1: '賢さブルボン ステータス『つまらない？』',
+          Choices1: '今のままでいいと思う',
+          Content1: 'スピード+10,『勢い任せ』のヒントLv+1',
+          Choices2: '表情を変えずに済む仮装は',
+          Content2: '賢さ+15' },
+          { Title1: '賢さブルボン 命令は守らなければならない',
+          Choices1: '開店直前から待機しておこう',
+          Content1: '『集中力』のヒントLv+1',
+          Choices2: '昼休みになったらダッシュ',
+          Content2: 'スピード+10スキルPt+15' },
+        ],
+       }
+     ],
      isActive: true,
+     isActive2: true,
+     name: "skills159"
   }
   },
    methods: {
    toggle_switch: function() {
     this.isActive = !this.isActive
+   },
+   toggle_switch2: function() {
+    this.isActive2 = !this.isActive2
    }
   }
 	};
@@ -113,5 +177,8 @@ table {
 .imaging{
     height: 50px;
     padding: 10px 0px 0px 0px;
+}
+.graymode{
+    filter: contrast(50%);
 }
 </style>
