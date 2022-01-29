@@ -5,6 +5,12 @@
   <img src="sp_159.png" class="graymode" v-on:click="toggle_switch()" v-if="isActive === false">
   <img src="sp_129.png" v-on:click="toggle_switch2()" v-if="isActive2 === true">
   <img src="sp_129.png" class="graymode" v-on:click="toggle_switch2()" v-if="isActive2 === false">
+  <img src="sp_36.png" v-on:click="toggle_switch3()" v-if="isActive3 === true">
+  <img src="sp_36.png" class="graymode" v-on:click="toggle_switch3()" v-if="isActive3 === false">
+  <img src="sp_148.png" v-on:click="toggle_switch4()" v-if="isActive4 === true">
+  <img src="sp_148.png" class="graymode" v-on:click="toggle_switch4()" v-if="isActive4 === false">
+  <img src="sp_115.png" v-on:click="toggle_switch5()" v-if="isActive5 === true">
+  <img src="sp_115.png" class="graymode" v-on:click="toggle_switch5()" v-if="isActive5 === false">
   </p>
   </div>
 	<div v-for="skill in skills159"
@@ -28,6 +34,60 @@
 <div v-for="skill in skills129"
        :key="skill.Title1" class="condition"
        v-if="isActive2 === true">
+   <h4>{{skill.Title1}}</h4>
+   <table>
+  <tbody>
+    <tr>
+      <th class="select1">{{skill.Choices1}}</th>
+      <td>{{skill.Content1}}</td>
+    </tr>
+    <tr>
+      <th class="select2">{{skill.Choices2}}</th>
+      <td>{{skill.Content2}}</td>
+    </tr>
+  </tbody>
+</table>
+</div> 
+
+<div v-for="skill in skills36"
+       :key="skill.Title1" class="condition"
+       v-if="isActive3 === true">
+   <h4>{{skill.Title1}}</h4>
+   <table>
+  <tbody>
+    <tr>
+      <th class="select1">{{skill.Choices1}}</th>
+      <td>{{skill.Content1}}</td>
+    </tr>
+    <tr>
+      <th class="select2">{{skill.Choices2}}</th>
+      <td>{{skill.Content2}}</td>
+    </tr>
+  </tbody>
+</table>
+</div> 
+
+<div v-for="skill in skills148"
+       :key="skill.Title1" class="condition"
+       v-if="isActive4 === true">
+   <h4>{{skill.Title1}}</h4>
+   <table>
+  <tbody>
+    <tr>
+      <th class="select1">{{skill.Choices1}}</th>
+      <td>{{skill.Content1}}</td>
+    </tr>
+    <tr>
+      <th class="select2">{{skill.Choices2}}</th>
+      <td>{{skill.Content2}}</td>
+    </tr>
+  </tbody>
+</table>
+</div> 
+
+<div v-for="skill in skills115"
+       :key="skill.Title1" class="condition"
+       v-if="isActive5 === true">
    <h4>{{skill.Title1}}</h4>
    <table>
   <tbody>
@@ -83,9 +143,61 @@
       Choices2: '一緒に配るぞ!',
       Content2: '根性+5,賢さ+5' },
      ],
+     skills36: [
+       { Title1: '賢さフクキタル お導きとお友だち',
+      Choices1: 'みんなを信じて!',
+      Content1: 'スキルPt+45',
+      Choices2: '気分転換に、1度走る?',
+      Content2: '体力-20(+10の場合有)『右回り◯』のヒントLv+1~3,ランダムでやる気アップ' },
+      { Title1: '賢さフクキタル 信仰心と親切心が交わる時ーー',
+      Choices1: '片っ端から作業を振ってみる',
+      Content1: 'スキルPt+30',
+      Choices2: '自分に親切にしてみるとかはどう?',
+      Content2: '体力+20' },
+      { Title1: '賢さフクキタル 全力スピリチュアル',
+      Choices1: 'ただ急いでいるだけの気が……',
+      Content1: '賢さ+5スキルPt+15',
+      Choices2: 'もう少し気合いも込めてみたら?',
+      Content2: '体力-10,スピード+5,スタミナ+5,パワー+5' },
+     ],
+     skills148: [
+       { Title1: '賢さネイチャ 抑えられないキモチ',
+      Choices1: '甘いお菓子を食べよう',
+      Content1: '体力+10',
+      Choices2: '走って頭をからっぽにしよう',
+      Content2: '体力-5スピード+5パワー+5バッドコンディションが治る' },
+      { Title1: '賢さネイチャ （ニャンとも）ガラじゃない',
+      Choices1: '癒されることも大事だと伝える',
+      Content1: '体力+20',
+      Choices2: 'クレバーに入店する方法を伝える',
+      Content2: '体力+10賢さ+5' },
+      { Title1: '賢さネイチャ （美味しい）おせっかい',
+      Choices1: '大根おろしで食べるペースアップ',
+      Content1: '『ペースアップ』のヒントLv+1',
+      Choices2: '寮で天ぷら祭りだ',
+      Content2: 'やる気アップ、体力最大値+4' },
+     ],
+     skills115: [
+       { Title1: 'パワーチケット 全・力・競・走',
+      Choices1: '手すりショートカットだ',
+      Content1: '『差しコーナー◯』のヒントLv+1',
+      Choices2: '相手の動きを予想してみるとか',
+      Content2: 'スキルPt+30' },
+      { Title1: 'パワーチケット 全・力・筋・肉',
+      Choices1: 'わかる!とことんやりたい',
+      Content1: 'スタミナ+5スキルPt+15',
+      Choices2: 'スポーツドリンクを渡す',
+      Content2: 'やる気アップスキルPt+15' },
+      
+     ],
+     isActive: true,
+     isActive2: true,
+     isActive3: true,
+     isActive4: true,
+     isActive5: true,
      skills: [
        {
-          skills159: [
+          detail: [
           { Title1: '賢さブルボン 他人に危害を及ぼしてはならない',
           Choices1: 'すごく重そうだ',
           Content1: '体力-10、スタミナ+5、パワー+15',
@@ -101,12 +213,9 @@
           Content1: '『集中力』のヒントLv+1',
           Choices2: '昼休みになったらダッシュ',
           Content2: 'スピード+10スキルPt+15' },
-        ],
+        ]
        }
-     ],
-     isActive: true,
-     isActive2: true,
-     name: "skills159"
+     ]
   }
   },
    methods: {
@@ -115,8 +224,17 @@
    },
    toggle_switch2: function() {
     this.isActive2 = !this.isActive2
+   },
+   toggle_switch3: function() {
+    this.isActive3 = !this.isActive3
+   },
+   toggle_switch4: function() {
+    this.isActive4 = !this.isActive4
+   },
+   toggle_switch5: function() {
+    this.isActive5 = !this.isActive5
    }
-  }
+  },
 	};
 </script>
 <style>
