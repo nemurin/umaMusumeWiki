@@ -12,6 +12,9 @@
 <SupportCardList :skills="skills36" :isActive="isActive3"></SupportCardList>
 <SupportCardList :skills="skills148" :isActive="isActive4"></SupportCardList>
 <SupportCardList :skills="skills115" :isActive="isActive5"></SupportCardList>
+<SupportCardList :skills="skills168" :isActive="isActive6"></SupportCardList>
+<SupportCardList :skills="skills22" :isActive="isActive7"></SupportCardList>
+<SupportCardList :skills="skills108" :isActive="isActive8"></SupportCardList>
 
 </div>
 </template>
@@ -98,13 +101,61 @@
       Content1: 'スタミナ+5スキルPt+15',
       Choices2: 'スポーツドリンクを渡す',
       Content2: 'やる気アップスキルPt+15' },
-      
+     ],
+    skills168: [
+       { Title1: 'パワーSSRダイタク 笑顔伝説・爆誕!',
+      Choices1: '注目度を上げるとか?',
+      Content1: '体力-5パワー+15(『先駆け』のヒントLv+1)',
+      Choices2: '今のままで充分だと思う!',
+      Content2: '体力+10スピード+15『先行コーナー◯』のヒントLv+1連続イベントが終了' },
+      { Title1: 'パワーSSRダイタク 太陽とエンカウント☆',
+      Choices1: '覚悟を決めて熱唱する',
+      Content1: 'パワー+10',
+      Choices2: '合いの手で盛り上がる',
+      Content2: '『注目株』になる' },
+      { Title1: 'パワーSSRダイタク 笑顔フォーエバー',
+      Choices1: 'そこは気合いでこらえて!',
+      Content1: 'スピード+5パワー+10',
+      Choices2: '一旦気を静めよう',
+      Content2: '『伏兵◯』のヒントLv+1' },
+     ],
+    skills22: [
+       { Title1: '賢さSRダイワスカーレット 明日は私が勝つんだから!',
+      Choices1: 'いつもこんなに早いのか?',
+      Content1: '賢さ+10',
+      Choices2: '2番でも充分偉いよ',
+      Content2: 'やる気アップ、スキルPt+15' },
+      { Title1: '賢さSRダイワスカーレット このくらい平気なんだから!',
+      Choices1: 'テーピングしようか?',
+      Content1: '『スタミナキープ』のヒントLv+1',
+      Choices2: '念のため保健室へ行っておこう!',
+      Content2: '体力+20やる気アップ' },
+     ],
+    skills108: [
+       { Title1: 'スピードSSRキタサンブラック 情けは人のためならず',
+      Choices1: '早く治さないとな',
+      Content1: '体力+10やる気アップ',
+      Choices2: 'この元気に負けてられないぞ!',
+      Content2: 'スピード+5~10『直線巧者』のヒントLv+1もしくはヒントLv+3' },
+      { Title1: 'スピードSSRキタサンブラック あぁ、友情',
+      Choices1: 'すごく力強かったぞ!',
+      Content1: 'やる気アップパワー+5',
+      Choices2: '本番に備えるだけだな!',
+      Content2: '体力+10' },
+      { Title1: 'スピードSSRキタサンブラック あぁ、故郷',
+      Choices1: '質のよいシューズがいいかも',
+      Content1: 'スピード+5パワー+10',
+      Choices2: 'トレーニング教本がよさそう',
+      Content2: '『練習上手◯』になる' },
      ],
      isActive: true,
      isActive2: true,
      isActive3: true,
      isActive4: true,
      isActive5: true,
+     isActive6: true,
+     isActive7: true,
+     isActive8: true,
      images: [
           { name: 'sp_159.png',
             function: 'isActive'},
@@ -116,6 +167,12 @@
             function: 'isActive4'},
             { name: 'sp_115.png',
             function: 'isActive5'},
+            { name: 'sp_168.png',
+            function: 'isActive6'},
+            { name: 'sp_22.png',
+            function: 'isActive7'},
+            { name: 'sp_108.png',
+            function: 'isActive8'},
      ]
   }
   },
