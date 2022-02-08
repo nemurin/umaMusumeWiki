@@ -1,18 +1,12 @@
 <template>
 <div>
-  <div class="imaging">
-  <img src="sp_159.png" v-on:click="toggle_switch()" v-if="isActive === true">
-  <img src="sp_159.png" class="graymode" v-on:click="toggle_switch()" v-if="isActive === false">
-  <img src="sp_129.png" v-on:click="toggle_switch2()" v-if="isActive2 === true">
-  <img src="sp_129.png" class="graymode" v-on:click="toggle_switch2()" v-if="isActive2 === false">
-  <img src="sp_36.png" v-on:click="toggle_switch3()" v-if="isActive3 === true">
-  <img src="sp_36.png" class="graymode" v-on:click="toggle_switch3()" v-if="isActive3 === false">
-  <img src="sp_148.png" v-on:click="toggle_switch4()" v-if="isActive4 === true">
-  <img src="sp_148.png" class="graymode" v-on:click="toggle_switch4()" v-if="isActive4 === false">
-  <img src="sp_115.png" v-on:click="toggle_switch5()" v-if="isActive5 === true">
-  <img src="sp_115.png" class="graymode" v-on:click="toggle_switch5()" v-if="isActive5 === false">
-  </p>
+  <div v-for="image in images" :key="image.name">
+  <img v-bind:src=image.name v-on:click="onActive(image.function)" v-if="checkActive(image.function)">
+  <img v-bind:src=image.name class="graymode" v-on:click="onActive(image.function)" v-if="checkActive(image.function) === false">
   </div>
+  <div class="imaging">
+  </div>
+  
 	<div v-for="skill in skills159"
        :key="skill.Title1" class="condition"
        v-if="isActive === true">
@@ -195,26 +189,17 @@
      isActive3: true,
      isActive4: true,
      isActive5: true,
-     skills: [
-       {
-          detail: [
-          { Title1: '賢さブルボン 他人に危害を及ぼしてはならない',
-          Choices1: 'すごく重そうだ',
-          Content1: '体力-10、スタミナ+5、パワー+15',
-          Choices2: '夜だと、音が少し響くかもな',
-          Content2: '体力+10,賢さ+5' },
-          { Title1: '賢さブルボン ステータス『つまらない？』',
-          Choices1: '今のままでいいと思う',
-          Content1: 'スピード+10,『勢い任せ』のヒントLv+1',
-          Choices2: '表情を変えずに済む仮装は',
-          Content2: '賢さ+15' },
-          { Title1: '賢さブルボン 命令は守らなければならない',
-          Choices1: '開店直前から待機しておこう',
-          Content1: '『集中力』のヒントLv+1',
-          Choices2: '昼休みになったらダッシュ',
-          Content2: 'スピード+10スキルPt+15' },
-        ]
-       }
+     images: [
+          { name: 'sp_159.png',
+            function: 'isActive'},
+            { name: 'sp_129.png',
+            function: 'isActive2'},
+            { name: 'sp_36.png',
+            function: 'isActive3'},
+            { name: 'sp_148.png',
+            function: 'isActive4'},
+            { name: 'sp_115.png',
+            function: 'isActive5'},
      ]
   }
   },
@@ -233,7 +218,18 @@
    },
    toggle_switch5: function() {
     this.isActive5 = !this.isActive5
-   }
+   },
+   onActive(name) {
+        this[name] = !this[name]
+      },
+   checkActive(name) {
+        if(this[name] === true){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
   },
 	};
 </script>
