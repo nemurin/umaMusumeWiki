@@ -6,96 +6,12 @@
   </div>
   <div class="imaging">
   </div>
-  
-	<div v-for="skill in skills159"
-       :key="skill.Title1" class="condition"
-       v-if="isActive === true">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
 
-<div v-for="skill in skills129"
-       :key="skill.Title1" class="condition"
-       v-if="isActive2 === true">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
-
-<div v-for="skill in skills36"
-       :key="skill.Title1" class="condition"
-       v-if="isActive3 === true">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
-
-<div v-for="skill in skills148"
-       :key="skill.Title1" class="condition"
-       v-if="isActive4 === true">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
-
-<div v-for="skill in skills115"
-       :key="skill.Title1" class="condition"
-       v-if="isActive5 === true">
-   <h4>{{skill.Title1}}</h4>
-   <table>
-  <tbody>
-    <tr>
-      <th class="select1">{{skill.Choices1}}</th>
-      <td>{{skill.Content1}}</td>
-    </tr>
-    <tr>
-      <th class="select2">{{skill.Choices2}}</th>
-      <td>{{skill.Content2}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
+<SupportCardList :skills="skills159" :isActive="isActive"></SupportCardList>
+<SupportCardList :skills="skills129" :isActive="isActive2"></SupportCardList>
+<SupportCardList :skills="skills36" :isActive="isActive3"></SupportCardList>
+<SupportCardList :skills="skills148" :isActive="isActive4"></SupportCardList>
+<SupportCardList :skills="skills115" :isActive="isActive5"></SupportCardList>
 
 </div>
 </template>
@@ -204,21 +120,6 @@
   }
   },
    methods: {
-   toggle_switch: function() {
-    this.isActive = !this.isActive
-   },
-   toggle_switch2: function() {
-    this.isActive2 = !this.isActive2
-   },
-   toggle_switch3: function() {
-    this.isActive3 = !this.isActive3
-   },
-   toggle_switch4: function() {
-    this.isActive4 = !this.isActive4
-   },
-   toggle_switch5: function() {
-    this.isActive5 = !this.isActive5
-   },
    onActive(name) {
         this[name] = !this[name]
       },
@@ -234,65 +135,5 @@
 	};
 </script>
 <style>
-img {
-  width: 50px;
-    height: auto;
-    vertical-align: inherit;
-    border-left: 1px solid #f2f2f2;
-    float: left;
-    text-align: center;
-    cursor: pointer;  
-}
-h4 {  
-    padding: 0px 0 0px 40px;
-    background-size: 25px 25px;
-    color: inherit;
-    background-repeat: no-repeat;
-    background-position: left center;
-    margin: 15px 0 10px;
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 0.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-}
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-table tr th {
-    border: 1px solid #B1CEA6;
-    background-color: #F5FCF2;
-}
-table tr td {
-    border: 1px solid #B1CEA6;
-    background-color: #FFF;
-}
-td {
-    display: table-cell;
-    vertical-align: inherit;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-left: 40px;
-}
-.select1{
-    background-color: #dcedc8!important;;
-}
-.select2{
-    background-color: #fff9c4!important;
-}
-.condition{
-    padding: 10px 0px 0px 00px;
-}
-.imaging{
-    height: 50px;
-    padding: 10px 0px 0px 0px;
-}
-.graymode{
-    filter: contrast(50%);
-}
+@import './style.css';
 </style>
