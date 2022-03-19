@@ -3,7 +3,7 @@
     <li class="selection"><router-link to="/">index</router-link></li>
     <li class="selection"><router-link to="/mejiroRian">メジロライアン</router-link></li>
     <li class="selection"><router-link to="/smartFarcon">スマートファルコン</router-link></li>
-    <li class="selection"><router-link to="/capricorn">カプリコーン杯</router-link></li>
+    <li class="selection"><router-link to="/chanmi">チャンミ</router-link></li>
     <li class="selection"><router-link to="/erucondorupasar">エルコンドルパサー</router-link></li>
     <li class="selection"><router-link to="/ogriCap">オグリ</router-link></li>
     <li class="selection"><router-link to="/supportKasikosa">サポカ(賢さ)</router-link></li>
