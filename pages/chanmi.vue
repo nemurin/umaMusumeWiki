@@ -4,8 +4,11 @@
 
 <div>
   <h1>チャンミ</h1>
+  <div>検索：<input type="text" v-model="search"></div>
+  <div>検索距離：<input type="text" v-model="search_kyori"></div>
+  <div>検索作戦：<input type="text" v-model="search_sakusen"></div>
        <table>
-  <tbody v-for="skill in skills"
+  <tbody v-for="skill in search_users"
        :key="skill.name" class="condition">
     <tr>
       <th class="select1">
@@ -37,6 +40,9 @@
 	export default {
 		data: function(){
     return {
+      search:'',
+      search_kyori:'',
+      search_sakusen:'',
       skills: [
         {
         image: 'koyuu.png',
@@ -247,15 +253,202 @@
         point: '200pt',
         howto: '',
       },
+
+      {
+        image: 'koyuu.png',
+        name: '追い込みコーナー',
+        cardType: '速度',
+        basyo: 'コーナー',
+        kyori: '',
+        sakusen: '追込',
+        place: '',
+        speed: '0.15',
+        acceleration: '0',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '130pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: '絶対は、ボクだ(継承)',
+        cardType: '速度',
+        basyo: '最終コーナー以降',
+        kyori: '',
+        sakusen: '',
+        place: '50%より上位2秒追い越し',
+        speed: '0.25',
+        acceleration: '',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '200pt',
+        howto: '',
+      },
+      {
+        image: 'healing.png',
+        name: '直線回復',
+        cardType: '回復',
+        basyo: '直線',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '',
+        acceleration: '',
+        kaihuku: '1.5%',
+        time: '',
+        cooldown: '500秒',
+        point: '170pt',
+        howto: '',
+      },
+      {
+        image: 'healing.png',
+        name: '下校の楽しみ',
+        cardType: '回復',
+        basyo: '下り坂',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '',
+        acceleration: '',
+        kaihuku: '1.5%',
+        time: '',
+        cooldown: '500秒',
+        point: '170pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: '勝ち関ワッショイ',
+        cardType: '速度加速度',
+        basyo: '第三コーナー2位以内/終盤',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '0.05',
+        acceleration: '0.1',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '200pt',
+        howto: '',
+      },
+      {
+        image: 'healing.png',
+        name: '下校後のスペシャリスト',
+        cardType: '金回復',
+        basyo: '下り坂',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '',
+        acceleration: '',
+        kaihuku: '5.5%',
+        time: '',
+        cooldown: '500秒',
+        point: '170pt',
+        howto: '',
+      },
+      {
+        image: 'debahu_sokudo.png',
+        name: 'まなざし',
+        cardType: '速度デバフ',
+        basyo: '終盤2位以降',
+        kyori: '',
+        sakusen: '追込',
+        place: '',
+        speed: '-0.15',
+        acceleration: '',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '180pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: '追い上げ',
+        cardType: '速度',
+        basyo: '終盤',
+        kyori: '長距離',
+        sakusen: '',
+        place: '',
+        speed: '0.15',
+        acceleration: '',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '160pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: 'コーナー巧者',
+        cardType: '速度',
+        basyo: 'コーナー',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '0.15',
+        acceleration: '',
+        kaihuku: '',
+        time: '2.4秒',
+        cooldown: '30秒',
+        point: '180pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: '仕掛け抜群',
+        cardType: '速度',
+        basyo: '終盤',
+        kyori: '',
+        sakusen: '追込',
+        place: '上位50%以降',
+        speed: '0.15',
+        acceleration: '',
+        kaihuku: '',
+        time: '3秒',
+        cooldown: '500秒',
+        point: '180pt',
+        howto: '',
+      },
+      {
+        image: 'koyuu.png',
+        name: '阪神レース場',
+        cardType: '速度加速度回復',
+        basyo: '中盤50%以降',
+        kyori: '',
+        sakusen: '',
+        place: '',
+        speed: '0.3',
+        acceleration: '0.36',
+        kaihuku: '4.2%',
+        time: '1.2秒',
+        cooldown: '500秒',
+        point: '200pt',
+        howto: '',
+      },
+      
       
       
      ],
   }
   },
-   methods: {
+   computed: {
+        search_users(){
 
+        let searchWord = this.search;
 
-  },
+        return this.skills.filter(skills => {
+            return skills.cardType.includes(searchWord)
+            && (skills.kyori.includes(this.search_kyori)
+            || skills.sakusen.includes(this.search_sakusen))
+            ;
+        })
+        }
+    },
 	};
 </script>
 <style>
