@@ -6,7 +6,10 @@
     <li class="selection"><router-link to="/capricorn">カプリコーン杯</router-link></li>
     <li class="selection"><router-link to="/erucondorupasar">エルコンドルパサー</router-link></li>
     <li class="selection"><router-link to="/ogriCap">オグリ</router-link></li>
-    <li class="selection"><router-link to="/supportChoice">サポカ</router-link></li>
+    <li class="selection"><router-link to="/supportKasikosa">サポカ(賢さ)</router-link></li>
+    <li class="selection"><router-link to="/supportSpeed">サポカ(スピード)</router-link></li>
+    <li class="selection"><router-link to="/supportStamina">サポカ(スタミナ)</router-link></li>
+    <li class="selection"><router-link to="/supportPower">サポカ(パワー)</router-link></li>
   </ul>
 </template>
 <script>
